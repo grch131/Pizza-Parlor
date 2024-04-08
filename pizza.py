@@ -21,6 +21,16 @@
     
     #assert pizza_topping(4) == 6
     
+#class Order:
+'''Represents an order of a pizza with the size and toppings'''
+
+#def take_order(self):
+'''This function will generate a random pizza order with size and toppings
+
+Returns:
+    order(str): A string containing the randomly generated pizza order
+'''
+
 
 
 #class Cost:
