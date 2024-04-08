@@ -43,5 +43,10 @@ toppings calculated in it'''
 '''This would be the unit test for the total profit of all pizzas together'''
     #self.assertEqual(profit([This would calculate the total price of all the pizzas together]))
 
+#def main():
+'''The main function of the pizza parlor simulation. This function provides options for taking orders, 
+viewing orders, and exiting the pizza parlor simulation.'''
+
+
 #if __name__ == '__main__':
     #pytest.main()
