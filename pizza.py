@@ -19,4 +19,27 @@ def toppings():
     
     pizza_topping = input("Enter what topping you would like")
     
-    
+
+
+#class Cost:
+''' This class will calculate the total cost of the pizza with the toppings calculated
+into it. This class will also calculate the total profit created, from adding all the
+pizzas sold together. '''
+
+#def total_cost_w_toppings():
+'''Function used to calculate the total cost of the specific pizza selected with all the 
+toppings calculated in it'''
+
+#def profit():
+''' This function will calculate the total profit from all the pizzas sold '''
+
+# def test_total_cost_w_toppings(self):
+'''This is the unit test for the total_cost of one pizza function'''
+    # self.assertEqual(total_cost([This would contain the prices of the pizzas]))
+
+#def test_profit(self):
+'''This would be the unit test for the total profit of all pizzas together'''
+    #self.assertEqual(profit([This would calculate the total price of all the pizzas together]))
+
+#if __name__ == '__main__':
+    #pytest.main()
