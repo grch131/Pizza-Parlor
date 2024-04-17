@@ -5,13 +5,45 @@
 #def init
     #self.size of the pizza
     #self.toppings for the pizza
+class Pizza:
+     
+    def __init__(self, pizza_size, pizza_toppings ):
+        
+        self.pizza_size = pizza_size
+        
+        self.pizza_toppings = pizza_toppings
     
-#def total_cost
-    #there will be a base cost for the pizza (around 9.99)
-    #toppings_cost (about 1.00 or 1.50 for each topping)
+    #def total_cost
+        #there will be a base cost for the pizza (around 9.99)
+        #toppings_cost (about 1.00 or 1.50 for each topping)
+        
+    def total_cost(self):
+        
+        base_cost = 9.99
+        
+        toppings_cost = len(self.pizza_toppings) * 1.00
+        
+        total = base_cost + toppings_cost
+        
+        if self.pizza_size.lower == 'medium':
+            
+            total += 2
+            
+        elif self.pizza_size.lower == 'large':
+            
+            total += 4
+            
+        return total
+            
+        
+    #def order
+        #a string that will return the order of the customer
     
-#def order
-    #a string that will return the order of the customer
+    def order(self):
+        
+        return f'You want a {self.pizza_size} pizza with {",".join(self.pizza_toppings)} toppings!'
+        
+        
     
 #unit test
 
