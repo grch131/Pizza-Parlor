@@ -1,3 +1,5 @@
+import random
+
 #class Pizza
 
 '''This class will have the pizza size, toppings, and the cost of them'''
@@ -55,13 +57,24 @@ class Pizza:
     
 #class Order:
 '''Represents an order of a pizza with the size and toppings'''
+class Order:
+    #def take_order(self):
+    '''This function will generate a random pizza order with size and toppings
 
-#def take_order(self):
-'''This function will generate a random pizza order with size and toppings
+    Returns:
+        order(str): A string containing the randomly generated pizza order
+    '''   
+    def take_order(self):
+        sizes = ['small', 'medium', 'large']
+        toppings = ['pepperoni', 'mushrooms', 'onions', 'sausage', 'bacon', 'olives']
+        
+        pizza_size = random.choice(sizes)
+        pizza_toppings = random.sample(toppings, random.randint(1, len(toppings)))
+        
+        pizza = Pizza(pizza_size, pizza_toppings)
+        
+        return pizza.order()
 
-Returns:
-    order(str): A string containing the randomly generated pizza order
-'''
 
 
 
