@@ -69,7 +69,15 @@ def take_order():
     
     return pizza.order(), total_cost
 
-
+def display_order(order_details, total_cost):
+    pizza_details = order_details.split(' with ')
+    pizza_size = pizza_details[0].split(' ')[-1]
+    pizza_toppings = pizza_details[1].split(' ')[0]
+    
+    print(f'Order Details:')
+    print(f'Pizza Size: {pizza_size}')
+    print(f'Toppings: {pizza_toppings}')
+    print(f'Total Cost: {total_cost}')
 
 
 class Cost:
