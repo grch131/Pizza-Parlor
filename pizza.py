@@ -54,26 +54,20 @@ class Pizza:
     #pizza_topping = 1.50
     
     #assert pizza_topping(4) == 6
-    
-#class Order:
-'''Represents an order of a pizza with the size and toppings'''
-class Order:
-    #def take_order(self):
-    '''This function will generate a random pizza order with size and toppings
 
-    Returns:
-        order(str): A string containing the randomly generated pizza order
-    '''   
-    def take_order(self):
-        sizes = ['small', 'medium', 'large']
-        toppings = ['pepperoni', 'mushrooms', 'onions', 'sausage', 'bacon', 'olives']
-        
-        pizza_size = random.choice(sizes)
-        pizza_toppings = random.sample(toppings, random.randint(1, len(toppings)))
-        
-        pizza = Pizza(pizza_size, pizza_toppings)
-        
-        return pizza.order()
+def take_order():
+    sizes = ['small', 'medium', 'large']
+    toppings = ['pepperoni', 'mushrooms', 'onions', 'sausage', 'bacon', 'olives']
+    
+    pizza_size = random.choice(sizes)
+    pizza_toppings = random.sample(toppings, random.randint(1, len(toppings)))
+    
+    pizza = Pizza(pizza_size, pizza_toppings)
+    
+    topping_cost = Cost(1.50)
+    total_cost = topping_cost.total_cost_w_toppings(len(pizza_toppings))
+    
+    return pizza.order(), total_cost
 
 
 
