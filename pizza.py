@@ -116,7 +116,37 @@ if __name__ == '__main__':
 #def main():
 '''The main function of the pizza parlor simulation. This function provides options for taking orders, 
 viewing orders, and exiting the pizza parlor simulation.'''
+def main():
+    orders = []
+
+    while True:
+        print("Welcome to Pizza Parlor!")
+        print("1. Take Order")
+        print("2. View Orders")
+        print("3. Exit")
+
+        choice = input("Please select a choice from the provided options: ")
+ 
+        if choice == '1':
+            size = input("Enter pizza size (small, medium, large): ")
+            toppings = input("Enter toppings (comma-separated): ").split(',')
+            new_order = Pizza(size.strip(), [topping.strip() for topping in toppings])
+            orders.append(new_order)
+            print("Order placed!")
+        elif choice == '2':
+            if orders:
+                print("\nCurrent Orders:")
+                for i, order in enumerate(orders, 1):
+                    print(f"{i}. {order.order()} - Total Cost: ${order.total_cost():.2f}")
+            else:
+                print("No orders yet.")
+        elif choice == '3':
+            print("Thank you for visiting Pizza Parlor!")
+            break
+        else:
+            print("Please try again. This time, select a provided option")
+
+if __name__ == '__main__':
+    main()
 
 
-#if __name__ == '__main__':
-    #pytest.main()
