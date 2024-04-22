@@ -78,30 +78,88 @@ class Order:
 
 
 
-#class Cost:
-''' This class will calculate the total cost of the pizza with the toppings calculated
-into it. This class will also calculate the total profit created, from adding all the
-pizzas sold together. '''
+class Cost:
+    def __init__(self, toppings_cost):
+        self.base_cost = 9.99 
+        self.toppings_cost = toppings_cost
+        
+    def total_cost_w_toppings(self, num_toppings):
+        """This function will be used to calculate the total cost of the specific pizza 
+        selected with all the toppings calculated in it
 
-#def total_cost_w_toppings():
-'''Function used to calculate the total cost of the specific pizza selected with all the 
-toppings calculated in it'''
+        Args:
+            num_toppings (_type_): _description_
 
-#def profit():
-''' This function will calculate the total profit from all the pizzas sold '''
+        Returns:
+            total_cost: _description_
+        """
+        total_cost = self.base_cost + (num_toppings * self.toppings_cost)
+        return total_cost
+        
+    def profit(self, num_sales, num_toppings):
+        """This function will calculate the total profit from all the pizzas sold
 
-# def test_total_cost_w_toppings(self):
-'''This is the unit test for the total_cost of one pizza function'''
-    # self.assertEqual(total_cost([This would contain the prices of the pizzas]))
+        Args:
+            num_sales (_type_): _description_
+            num_toppings (_type_): _description_
 
-#def test_profit(self):
-'''This would be the unit test for the total profit of all pizzas together'''
-    #self.assertEqual(profit([This would calculate the total price of all the pizzas together]))
+        Returns:
+            _type_: _description_
+        """
+        total_sales = num_sales * self.total_cost_w_toppings(num_toppings)
+        total_cost = num_sales * self.base_cost
+        profit = total_sales - total_cost
+        return profit 
+
+"""unit test"""
+    def test_total_cost_w_toppings(self):
+        """This is the unit test for the total_cost of one pizza function"""
+        cost_instance = Cost(toppings_cost = 1)
+        assert cost_instance.total_cost_w_toppings(3) == 13
+        
+    def test_profit(self):
+        """This would be the unit test for the total profit of all pizzas together"""
+        cost_instance = Cost(toppings_cost= 1)
+        assert cost_instance.profit(num_sales=100, num_toppings= 3) == 1100.0
+        
+if __name__ == '__main__':
+   pytest.main()
+
 
 #def main():
 '''The main function of the pizza parlor simulation. This function provides options for taking orders, 
 viewing orders, and exiting the pizza parlor simulation.'''
+def main():
+    orders = []
+
+    while True:
+        print("Welcome to Pizza Parlor!")
+        print("1. Take Order")
+        print("2. View Orders")
+        print("3. Exit")
+
+        choice = input("Please select a choice from the provided options: ")
+ 
+        if choice == '1':
+            size = input("Enter pizza size (small, medium, large): ")
+            toppings = input("Enter toppings (comma-separated): ").split(',')
+            new_order = Pizza(size.strip(), [topping.strip() for topping in toppings])
+            orders.append(new_order)
+            print("Order placed!")
+        elif choice == '2':
+            if orders:
+                print("\nCurrent Orders:")
+                for i, order in enumerate(orders, 1):
+                    print(f"{i}. {order.order()} - Total Cost: ${order.total_cost():.2f}")
+            else:
+                print("No orders yet.")
+        elif choice == '3':
+            print("Thank you for visiting Pizza Parlor!")
+            break
+        else:
+            print("Please try again. This time, select a provided option")
+
+if __name__ == '__main__':
+    main()
 
 
-#if __name__ == '__main__':
-    #pytest.main()
