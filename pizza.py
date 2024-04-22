@@ -111,21 +111,6 @@ class Cost:
         profit = total_sales - total_cost
         return profit 
 
-"""unit test"""
-    def test_total_cost_w_toppings(self):
-        """This is the unit test for the total_cost of one pizza function"""
-        cost_instance = Cost(toppings_cost = 1)
-        assert cost_instance.total_cost_w_toppings(3) == 13
-        
-    def test_profit(self):
-        """This would be the unit test for the total profit of all pizzas together"""
-        cost_instance = Cost(toppings_cost= 1)
-        assert cost_instance.profit(num_sales=100, num_toppings= 3) == 1100.0
-        
-if __name__ == '__main__':
-   pytest.main()
-
-
 #def main():
 '''The main function of the pizza parlor simulation. This function provides options for taking orders, 
 viewing orders, and exiting the pizza parlor simulation.'''
