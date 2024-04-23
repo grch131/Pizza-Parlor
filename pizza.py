@@ -64,7 +64,7 @@ def take_order():
     
     pizza = Pizza(pizza_size, pizza_toppings)
     
-    topping_cost = Cost(1.50)
+    topping_cost = Cost(1.00)
     total_cost = topping_cost.total_cost_w_toppings(len(pizza_toppings))
     
     return pizza.order(), total_cost
@@ -141,7 +141,7 @@ def main():
             else:
                 print("No orders yet.")
         elif choice == '3':
-            print("Thank you for visiting Pizza Parlor!")
+            print("Thank you for visiting our Pizza Parlor!")
             break
         else:
             print("Please try again. This time, select a provided option")
