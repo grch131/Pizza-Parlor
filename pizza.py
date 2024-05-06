@@ -142,9 +142,11 @@ class Cost:
         Returns:
             _type_: _description_
         """
+        ingredient_cost = 5.00
+        
         total_sales = num_sales * self.total_cost_w_toppings(num_toppings)
         
-        total_cost = num_sales * self.base_cost
+        total_cost = num_sales * 5.00
         
         profit = total_sales - total_cost
         
