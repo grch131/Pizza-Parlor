@@ -4,7 +4,11 @@ import pytest
 
 from pizza import Pizza
 
+#Diamond
+
 def test1(pizza_size, pizza_toppings, estimated_cost):
+    
+    """Test for the total_cost function"""
     
     pizza = Pizza(pizza_size, pizza_toppings)
     
@@ -12,9 +16,13 @@ def test1(pizza_size, pizza_toppings, estimated_cost):
     
 def test2(pizza_size, pizza_toppings, order):
     
+    """Test for the order function"""
+    
     pizza = Pizza(pizza_size, pizza_toppings)
     
     assert pizza.order() == order
+    
+#Grace
 
 def test_total_cost_w_toppings(self):
     """This is the test for the total_cost of one pizza function"""
