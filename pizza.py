@@ -27,11 +27,11 @@ class Pizza:
         
         total = base_cost + toppings_cost
         
-        if self.pizza_size.lower == 'medium':
+        if self.pizza_size.lower() == 'medium':
             
             total += 2
             
-        elif self.pizza_size.lower == 'large':
+        elif self.pizza_size.lower() == 'large':
             
             total += 4
             
@@ -222,6 +222,10 @@ def main():
         else:
             
             print("Please try again. This time, select a provided option")
+            
+        if choice == "1" and new_order:
+            
+            display_order(new_order.order(),new_order.total_cost())
 
 
 if __name__ == '__main__':
