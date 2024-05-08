@@ -88,6 +88,12 @@ def display_order(order_details, total_cost):
 
 class Cost:
     def __init__(self, toppings_cost):
+        """This function will be used to initialize the base_cost of the pizza, which is 9.99
+        and it will also initialize the toppings_cost 
+
+        Args:
+            toppings_cost (float): How much each of the toppings cost 
+        """
         
         self.base_cost = 9.99 
         
@@ -98,10 +104,10 @@ class Cost:
         selected with all the toppings calculated in it
 
         Args:
-            num_toppings (_type_): _description_
+            num_toppings (int): This is the number of toppings that will be on the pizza
 
         Returns:
-            total_cost: _description_
+            total_cost: How much the total pizza will cost with all the toppings added to the base price 
         """
         total_cost = self.base_cost + (num_toppings * self.toppings_cost)
         
@@ -111,11 +117,11 @@ class Cost:
         """This function will calculate the total profit from all the pizzas sold
 
         Args:
-            num_sales (_type_): _description_
-            num_toppings (_type_): _description_
+            num_sales (int): How many pizzas we have sold
+            num_toppings (int): How many toppings there are
 
         Returns:
-            _type_: _description_
+            float: The total profit earned from all the pizza sold 
         """
         ingredient_cost = 5.00
         
