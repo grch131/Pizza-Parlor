@@ -5,3 +5,5 @@ throughout the semester.
 
 The user will be able to make their own personal pizza by asking for the size, and toppings. They will then be able to view how many every pizza's they have ordered, and the cost
 of each pizza when they are done ordering.
+
+To run the program, please type python (or python3 if on macbook) pizza.py. Make sure to add a space between python and pizza.py!
