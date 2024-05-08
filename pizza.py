@@ -1,15 +1,7 @@
 '''Pizza Parlor Simulator!   By Diamond Andy, Grace Choe, Jason Liu, and Daniel Amare '''
 
-
 import random
 
-#class Pizza
-
-'''This class will have the pizza size, toppings, and the cost of them'''
-
-#def init
-    #self.size of the pizza
-    #self.toppings for the pizza
 class Pizza:
      
     def __init__(self, pizza_size, pizza_toppings):
@@ -20,17 +12,13 @@ class Pizza:
         self.pizza_size = pizza_size
         
         self.pizza_toppings = pizza_toppings
-    
-    #def total_cost
-        #there will be a base cost for the pizza (around 9.99)
-        #toppings_cost (about 1.00 or 1.50 for each topping)
         
     def total_cost(self):
         
         """This function will give the estimated cost of the customer's pizza
 
         Returns:
-            _type_: The estimated total cost of the customers pizza.
+            float: The estimated total cost of the customers pizza.
         """
         
         base_cost = 9.99
@@ -52,10 +40,6 @@ class Pizza:
             total += 1
             
         return total
-            
-        
-    #def order
-        #a string that will return the order of the customer
     
     def order(self):
         
@@ -67,15 +51,6 @@ class Pizza:
         
         return f'You want a {self.pizza_size} pizza with {",".join(self.pizza_toppings)} toppings!'
         
-        
-    
-#unit test
-
-#def topping_price():
-    
-    #pizza_topping = 1.50
-    
-    #assert pizza_topping(4) == 6
 
 def take_order():
     sizes = ['small', 'medium', 'large']
@@ -161,8 +136,11 @@ def main():
 
     while True:
         print("Welcome to Pizza Parlor!")
+        
         print("1. Take Order")
+        
         print("2. View Orders")
+        
         print("3. Exit")
 
         choice = input("Please select a choice from the provided options: ")
