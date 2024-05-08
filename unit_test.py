@@ -29,3 +29,20 @@ def test_profit(self):
 
     assert cost_instance.profit(num_sales=100, num_toppings= 3) == 899.0
 
+from pizza import take_order
+
+def test_take_order():
+    """Unit test for the take_order function in pizza.py"""
+    order_details, total_cost = take_order()
+
+    assert isinstance(order_details, str)
+
+    assert isinstance(total_cost, float)
+
+    assert 'small' in order_details or 'medium' in order_details or 'large' in order_details
+    assert 'pepperoni' in order_details or 'mushrooms' in order_details or 'onions' in order_details or 'sausage' in order_details or 'bacon' in order_details or 'olives' in order_details
+
+#display_order test
+"""Open the Python script containing the display_order function.
+Call the display_order function with a set of parameters, such as display_order('medium pizza with mushrooms, onions', 6.00).
+Check the console output."""
