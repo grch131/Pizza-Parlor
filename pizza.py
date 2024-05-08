@@ -53,6 +53,7 @@ class Pizza:
         
 
 def take_order():
+    
     sizes = ['small', 'medium', 'large']
     
     toppings = ['pepperoni', 'mushrooms', 'onions', 'sausage', 'bacon', 'olives']
@@ -88,6 +89,7 @@ def display_order(order_details, total_cost):
 
 class Cost:
     def __init__(self, toppings_cost):
+        
         """This function will be used to initialize the base_cost of the pizza, which is 9.99
         and it will also initialize the toppings_cost 
 
@@ -100,6 +102,7 @@ class Cost:
         self.toppings_cost = toppings_cost
         
     def total_cost_w_toppings(self, num_toppings):
+        
         """This function will be used to calculate the total cost of the specific pizza 
         selected with all the toppings calculated in it
 
@@ -134,51 +137,79 @@ class Cost:
         return profit 
 
 def main():
+    
     '''The main function of the pizza parlor simulation. This function provides options for taking orders,
     viewing orders, viewing profit, and exiting the pizza parlor simulation.'''
+    
     orders = []
+    
     num_sales = 0
+    
     total_toppings_sold = 0
 
     while True:
+        
         print("Welcome to Pizza Parlor!")
+        
         print("1. Take Order")
+        
         print("2. View Orders")
+        
         print("3. View Profit")
+        
         print("4. Exit")
 
         choice = input("Please select a choice from the provided options: ")
 
         if choice == '1':
             size = input("Enter pizza size (small, medium, large): ")
+            
             toppings = input("Enter toppings (comma-separated): ").split(',')
+            
             new_order = Pizza(size.strip(), [topping.strip() for topping in toppings])
+            
             orders.append(new_order)
+            
             num_sales += 1
+            
             total_toppings_sold += len(toppings)
+            
             print("Order placed!")
 
         elif choice == '2':
+            
             if orders:
+                
                 print("\nCurrent Orders:")
+                
                 for i, order in enumerate(orders, 1):
+                    
                     print(f"{i}. {order.order()} - Total Cost: ${order.total_cost():.2f}")
             else:
                 print("No orders yet.")
 
         elif choice == '3':
+            
             if num_sales > 0:
+                
                 topping_cost = Cost(1.00)
+                
                 total_profit = topping_cost.profit(num_sales, total_toppings_sold)
+                
                 print(f"Total Profit: ${total_profit:.2f}")
+                
             else:
+                
                 print("No sales yet.")
 
         elif choice == '4':
+            
             print("Thank you for visiting our Pizza Parlor!")
+            
             break
 
         else:
+            
             print("Please try again. This time, select a provided option")
 
 

@@ -6,7 +6,7 @@ from pizza import Pizza
 
 #Diamond
 
-def test1(pizza_size, pizza_toppings, estimated_cost):
+def test_total_cost(pizza_size, pizza_toppings, estimated_cost):
     
     """Test for the total_cost function"""
     
@@ -14,7 +14,7 @@ def test1(pizza_size, pizza_toppings, estimated_cost):
     
     assert pizza.total_cost() == estimated_cost
     
-def test2(pizza_size, pizza_toppings, order):
+def test_order(pizza_size, pizza_toppings, order):
     
     """Test for the order function"""
     
@@ -38,6 +38,8 @@ def test_profit(self):
     assert cost_instance.profit(num_sales=100, num_toppings= 3) == 899.0
 
 from pizza import take_order
+
+#Jason
 
 def test_take_order():
     """Unit test for the take_order function in pizza.py"""
