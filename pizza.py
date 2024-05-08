@@ -53,7 +53,13 @@ class Pizza:
         
 
 def take_order():
-    
+    """This function simulates the process of taking a pizza order by randomly selecting a size 
+    from the possible sizes and toppings from the possible toppings. 
+
+    Returns:
+        tuple: A tuple containing the details of the pizza order (a string) and the total cost (a float).
+    """
+
     sizes = ['small', 'medium', 'large']
     
     toppings = ['pepperoni', 'mushrooms', 'onions', 'sausage', 'bacon', 'olives']
@@ -71,7 +77,12 @@ def take_order():
     return pizza.order(), total_cost
 
 def display_order(order_details, total_cost):
-    
+    """This function takes the details of a pizza order and the total cost as input and prints them out.
+
+    Args:
+        order_details (str): A string containing the details of the pizza order.
+        total_cost (float): The total cost of the pizza order.
+    """
     pizza_details = order_details.split(' with ')
     
     pizza_size = pizza_details[0].split(' ')[-1]
