@@ -1,6 +1,7 @@
 #unit test for pizza.py
 
 import pytest
+import unit_test
 
 from pizza import Pizza
 
@@ -24,22 +25,24 @@ def test_order(pizza_size, pizza_toppings, order):
     
 #Grace
 
-def test_total_cost_w_toppings(self):
+from pizza import Cost
+
+def test_total_cost_w_toppings():
     """This is the test for the total_cost of one pizza function"""
     
-    cost_instance = Cost(toppings_cost = 1)
+    cost_instance = Cost(toppings_cost = 1.00)
     
     assert cost_instance.total_cost_w_toppings(3) == 12.99
 
-def test_profit(self):
+def test_profit():
     """This is the test for the total profit of all pizzas together"""
-    cost_instance = Cost(toppings_cost= 1)
+    cost_instance = Cost(toppings_cost= 1.00)
 
     assert cost_instance.profit(num_sales=100, num_toppings= 3) == 899.0
 
-from pizza import take_order
-
 #Jason
+
+from pizza import take_order
 
 def test_take_order():
     """Unit test for the take_order function in pizza.py"""
@@ -58,26 +61,31 @@ Call the display_order function with a set of parameters, such as display_order(
 Check the console output."""
 
 #Daniel
+
 import unittest
 
 from unittest.mock import patch
 
 from io import StringIO
 
-from your_module_name import main
-
 from pizza import main
 
 class TestPizzaParlor(unittest.TestCase):
+    
     @patch('builtins.input', side_effect=['1', 'small', 'pepperoni', '2', '3', '4'])
+    
     def test_main_function(self, mock_input):
+        
         """Test the main function of the Pizza Parlor simulation."""
 
         with patch('sys.stdout', new=StringIO()) as fake_output:
+            
             main()
+            
             output = fake_output.getvalue()
         
         expected_output = "Welcome to Pizza Parlor!\nOrder placed!\n\nCurrent Orders:\n1. You want a small pizza with pepperoni toppings! - Total Cost: $10.99\nTotal Profit: $7.00\nThank you for visiting our Pizza Parlor!\n"
+        
         self.assertEqual(output, expected_output)
 
 if __name__ == '__main__':
