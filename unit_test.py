@@ -1,6 +1,8 @@
 #unit test for pizza.py
 
 import pytest
+from io import StringIO
+import sys
 import unit_test
 
 from pizza import Pizza
@@ -42,23 +44,27 @@ def test_profit():
 
 #Jason
 
-from pizza import take_order
+from pizza import display_order
 
-def test_take_order():
-    """Unit test for the take_order function in pizza.py"""
-    order_details, total_cost = take_order()
+def test_display_order():
 
-    assert isinstance(order_details, str)
+    stdout = sys.stdout
 
-    assert isinstance(total_cost, float)
+    sys.stdout = StringIO()
 
-    assert 'small' in order_details or 'medium' in order_details or 'large' in order_details
-    assert 'pepperoni' in order_details or 'mushrooms' in order_details or 'onions' in order_details or 'sausage' in order_details or 'bacon' in order_details or 'olives' in order_details
+    display_order("Pizza Size: Large with Toppings: Pepperoni, Olives", 16.99)
 
-#display_order test
-"""Open the Python script containing the display_order function.
-Call the display_order function with a set of parameters, such as display_order('medium pizza with mushrooms, onions', 6.00).
-Check the console output."""
+    output = sys.stdout.getvalue()
+
+    sys.stdout = stdout
+
+    assert "Order Details:" in output
+
+    assert "Pizza Size: Large" in output
+
+    assert "Toppings: Pepperoni, Olives" in output
+    
+    assert "Total Cost: 16.99" in output
 
 #Daniel
 
