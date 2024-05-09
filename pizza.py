@@ -77,6 +77,7 @@ def take_order():
     return pizza.order(), total_cost
 
 def display_order(order_details, total_cost):
+    
     """This function takes the details of a pizza order and the total cost as input and prints them out.
 
     Args:

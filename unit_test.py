@@ -64,18 +64,26 @@ from unittest.mock import patch
 
 from io import StringIO
 
+from your_module_name import main
+
 from pizza import main
 
 class TestPizzaParlor(unittest.TestCase):
+    
     @patch('builtins.input', side_effect=['1', 'small', 'pepperoni', '2', '3', '4'])
+    
     def test_main_function(self, mock_input):
+        
         """Test the main function of the Pizza Parlor simulation."""
 
         with patch('sys.stdout', new=StringIO()) as fake_output:
+            
             main()
+            
             output = fake_output.getvalue()
         
         expected_output = "Welcome to Pizza Parlor!\nOrder placed!\n\nCurrent Orders:\n1. You want a small pizza with pepperoni toppings! - Total Cost: $10.99\nTotal Profit: $7.00\nThank you for visiting our Pizza Parlor!\n"
+        
         self.assertEqual(output, expected_output)
 
 if __name__ == '__main__':
