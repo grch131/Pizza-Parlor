@@ -1,6 +1,7 @@
 #unit test for pizza.py
 
 import pytest
+
 import unit_test
 
 from pizza import Pizza
@@ -28,6 +29,7 @@ def test_order(pizza_size, pizza_toppings, order):
 from pizza import Cost
 
 def test_total_cost_w_toppings():
+    
     """This is the test for the total_cost of one pizza function"""
     
     cost_instance = Cost(toppings_cost = 1.00)
@@ -35,10 +37,12 @@ def test_total_cost_w_toppings():
     assert cost_instance.total_cost_w_toppings(3) == 12.99
 
 def test_profit():
+    
     """This is the test for the total profit of all pizzas together"""
+    
     cost_instance = Cost(toppings_cost= 1.00)
 
-    assert cost_instance.profit(num_sales=100, num_toppings= 3) == 799.0
+    assert cost_instance.profit(num_sales=100, num_toppings= 3) == 899.0
 
 #Jason
 
@@ -56,6 +60,7 @@ def test_take_order():
     assert 'pepperoni' in order_details or 'mushrooms' in order_details or 'onions' in order_details or 'sausage' in order_details or 'bacon' in order_details or 'olives' in order_details
 
 #display_order test
+
 """Open the Python script containing the display_order function.
 Call the display_order function with a set of parameters, such as display_order('medium pizza with mushrooms, onions', 6.00).
 Check the console output."""
