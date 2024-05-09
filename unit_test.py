@@ -27,16 +27,16 @@ def test_order(pizza_size, pizza_toppings, order):
 
 from pizza import Cost
 
-def test_total_cost_w_toppings(self):
+def test_total_cost_w_toppings():
     """This is the test for the total_cost of one pizza function"""
     
-    cost_instance = Cost(toppings_cost = 1)
+    cost_instance = Cost(toppings_cost = 1.00)
     
     assert cost_instance.total_cost_w_toppings(3) == 12.99
 
-def test_profit(self):
+def test_profit():
     """This is the test for the total profit of all pizzas together"""
-    cost_instance = Cost(toppings_cost= 1)
+    cost_instance = Cost(toppings_cost= 1.00)
 
     assert cost_instance.profit(num_sales=100, num_toppings= 3) == 899.0
 
