@@ -52,6 +52,8 @@ from pizza import display_order
 
 def test_display_order():
 
+    """Test for the display_order function """
+
     stdout = sys.stdout
 
     sys.stdout = StringIO()
