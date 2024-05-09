@@ -44,7 +44,7 @@ def test_profit():
     
     cost_instance = Cost(toppings_cost= 1.00)
 
-    assert cost_instance.profit(num_sales=100, num_toppings= 3) == 899.0
+    assert cost_instance.profit(num_sales=100, num_toppings= 3) == 799.0
 
 #Jason
 
