@@ -52,29 +52,6 @@ class Pizza:
         return f'You want a {self.pizza_size} pizza with {",".join(self.pizza_toppings)} toppings!'
         
 
-def take_order():
-    """This function simulates the process of taking a pizza order by randomly selecting a size 
-    from the possible sizes and toppings from the possible toppings. 
-
-    Returns:
-        tuple: A tuple containing the details of the pizza order (a string) and the total cost (a float).
-    """
-
-    sizes = ['small', 'medium', 'large']
-    
-    toppings = ['pepperoni', 'mushrooms', 'onions', 'sausage', 'bacon', 'olives']
-    
-    pizza_size = random.choice(sizes)
-    
-    pizza_toppings = random.sample(toppings, random.randint(1, len(toppings)))
-    
-    pizza = Pizza(pizza_size, pizza_toppings)
-    
-    topping_cost = Cost(1.00)
-    
-    total_cost = topping_cost.total_cost_w_toppings(len(pizza_toppings))
-    
-    return pizza.order(), total_cost
 
 def display_order(order_details, total_cost):
     """This function takes the details of a pizza order and the total cost as input and prints them out.
@@ -95,7 +72,7 @@ def display_order(order_details, total_cost):
     
     print(f'Toppings: {pizza_toppings}')
     
-    print(f'Total Cost: {total_cost}')
+    print(f'Total Cost: {round(total_cost, 2)}')
 
 
 class Cost:
@@ -187,6 +164,8 @@ def main():
             
             print("Order placed!")
 
+            display_order(new_order.order(), new_order.total_cost())
+
         elif choice == '2':
             
             if orders:
@@ -222,10 +201,6 @@ def main():
         else:
             
             print("Please try again. This time, select a provided option")
-            
-        if choice == "1" and new_order:
-            
-            display_order(new_order.order(),new_order.total_cost())
 
 
 if __name__ == '__main__':
