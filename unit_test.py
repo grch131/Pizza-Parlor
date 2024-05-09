@@ -23,6 +23,7 @@ def test_order(pizza_size, pizza_toppings, order):
     assert pizza.order() == order
     
 #Grace
+from pizza import Cost
 
 def test_total_cost_w_toppings(self):
     """This is the test for the total_cost of one pizza function"""
@@ -37,9 +38,8 @@ def test_profit(self):
 
     assert cost_instance.profit(num_sales=100, num_toppings= 3) == 899.0
 
-from pizza import take_order
-
 #Jason
+from pizza import take_order
 
 def test_take_order():
     """Unit test for the take_order function in pizza.py"""
