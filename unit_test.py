@@ -64,8 +64,6 @@ from unittest.mock import patch
 
 from io import StringIO
 
-from your_module_name import main
-
 from pizza import main
 
 class TestPizzaParlor(unittest.TestCase):
