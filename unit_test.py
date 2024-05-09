@@ -69,11 +69,7 @@ def test_display_order():
     assert "Toppings: Pepperoni, Olives" in output
     
     assert "Total Cost: 16.99" in output
-#display_order test
 
-"""Open the Python script containing the display_order function.
-Call the display_order function with a set of parameters, such as display_order('medium pizza with mushrooms, onions', 6.00).
-Check the console output."""
 
 #Daniel
 
